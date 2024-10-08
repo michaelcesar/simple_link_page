@@ -1,0 +1,18 @@
+.wrapper {
+  /* display */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  /* styles */
+  background-color: white;
+  border-radius: 100%;
+  border: 2px solid #ffffff;
+  background: radial-gradient(
+      45.74% 60.81% at 52.31% 1.93%,
+      #081c3f 0,
+      rgba(1, 6, 15, 0.67) 100%
+    ),
+    #030e20;
+  box-shadow: 0 -16px 20px 0 rgba(0, 0, 0, 0.43);
+}
