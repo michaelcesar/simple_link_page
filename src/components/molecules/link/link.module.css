@@ -3,7 +3,7 @@
   width: 100%;
   height: 450px;
   /* styles */
-  transition: 0.5s;
+  transition: transform 0.5s ease-in-out;
   background: #030811;
   border-radius: 0.5rem;
   border: 2px solid #02183d;
@@ -15,47 +15,81 @@
   transform: scale(1.02);
 }
 
+.wrapper:hover .banner::before {
+  filter: blur(0);
+}
+
+.wrapper:hover .banner::after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .banner {
   /* display */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 40%;
+  height: 45%;
   /* styles */
   border-radius: 8px 8px 0px 0px;
   position: relative;
   overflow: hidden;
 }
 
+.defaultContent,
+.hoverContent {
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 1s ease-in-out;
+  position: absolute;
+  z-index: 2;
+}
+
+.defaultContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hoverContent {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.wrapper:hover .defaultContent {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.wrapper:hover .hoverContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .banner::before {
+  transition: filter 1s ease-in-out;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: inherit; 
+  background-image: inherit;
   background-size: cover;
   background-position: center;
-  filter: blur(5px); 
-  z-index: 0; 
+  filter: blur(5px);
+  z-index: 0;
 }
 
 .banner::after {
+  transition: background 1s ease-in-out;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45); 
-  z-index: 1; 
-}
-
-.banner * {
-  position: relative;
-  z-index: 2; 
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
 .content {
@@ -64,11 +98,11 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 60%;
+  height: 55%;
   padding: 24px 24px 24px 24px;
   gap: 24px;
   /* styles */
-  border-top: 2px solid #021331;
+  border-top: 2px solid #081c3f;
   background: radial-gradient(
       45.74% 60.81% at 52.31% 1.93%,
       #081c3f 0,
@@ -95,4 +129,15 @@
   border: 1px solid #0b1f41;
   font-size: 0.8rem;
   font-weight: 400;
+}
+
+.contextBox {
+  /* display */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  /* styles */
 }

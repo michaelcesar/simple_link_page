@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Words from '@/components/atoms/words';
 import styles from './link.module.css';
 
@@ -6,22 +9,38 @@ interface LinkProps {
   texts: string[];
   subtitle: string;
   imageUrl: string;
+  hoverContent?: JSX.Element;
+  defaultContent?: JSX.Element;
 }
 
-export default function Link({ tag, texts, subtitle, imageUrl }: LinkProps) {
+export default function Link({
+  tag,
+  texts,
+  subtitle,
+  imageUrl,
+  hoverContent,
+  defaultContent
+}: LinkProps) {
+  const [, setIsHovered] = useState(false);
+
   return (
-    <aside className={styles.wrapper}>
+    <aside
+      className={styles.wrapper}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div
         className={styles.banner}
         style={{
           backgroundImage: `url(${imageUrl})`
         }}
       >
-        <h1>Michael</h1>
+        <div className={`${styles.defaultContent}`}>{defaultContent}</div>
+        <div className={`${styles.hoverContent}`}>{hoverContent}</div>
       </div>
       <div className={styles.content}>
         <div className={styles.tag}>{tag}</div>
-        <Words texts={texts}></Words>
+        <Words texts={texts} />
         <p>{subtitle}</p>
       </div>
     </aside>
