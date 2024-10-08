@@ -19,25 +19,26 @@ export default function Links() {
             <p>@arcocontent</p>
           </div>
         </div>
-        <h1>
-          Produtos digitais que<br></br> mudam negócios.
-        </h1>
+        <h1>Produtos digitais que mudam negócios.</h1>
       </div>
       <section className={styles.wrapper}>
         <Link
           tag="Contrate agora"
           texts={web}
           subtitle="Clique aqui e solicite um orçamento agora mesmo pelo nosso whatsapp."
+          imageUrl="/images/dev_bg.webp"
         ></Link>
         <Link
           tag="Inscreva-se agora"
           texts={web}
           subtitle="Conteúdos sobre tecnoligia, negócios e marketing."
+          imageUrl="/images/dev_bg.webp"
         ></Link>
         <Link
           tag="Comece a seguir"
           texts={web}
           subtitle="Conteúdos diários sobre tecnologia, negócios e marketing. Sempre com um pouco humor (as vezes nem tanto)."
+          imageUrl="/images/dev_bg.webp"
         ></Link>
       </section>
     </main>
