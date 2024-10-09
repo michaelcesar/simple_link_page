@@ -1,8 +1,7 @@
 import Link from '@/components/molecules/link';
 import styles from './links.module.css';
 import outStyles from '@/components/molecules/link/link.module.css';
-import Img from '@/components/atoms/logo';
-import ActionButton from '@/components/atoms/action_button';
+import Img from '@/components/atoms/img';
 
 export default function Links() {
   const web = [
@@ -15,13 +14,12 @@ export default function Links() {
     <main className={styles.page}>
       <div className={styles.box}>
         <div className={styles.us}>
-          <Img url="/images/logo_white.svg" width={40} height={40}></Img>
+          <Img url="/images/logo_white.svg" width={48} height={48}></Img>
           <div className={styles.info}>
             <h3>Arco Content</h3>
             <p>@arcocontent</p>
           </div>
         </div>
-        <h1>Produtos digitais que mudam negócios.</h1>
       </div>
       <section className={styles.wrapper}>
         <Link
@@ -31,46 +29,38 @@ export default function Links() {
           imageUrl="/images/dev_bg.webp"
           hoverContent={
             <div className={outStyles.contextBox}>
-              <ActionButton text="REALIZAR ORÇAMENTO"></ActionButton>
+              <Img url="/images/arrow.svg" width={32} height={32}></Img>
             </div>
           }
-          defaultContent={
-            <div className={outStyles.contextBox}>
-              <h1>CONTENT</h1>
-            </div>
-          }
+          defaultContent={<div className={outStyles.contextBox}></div>}
         ></Link>
         <Link
           tag="Inscreva-se agora"
           texts={web}
           subtitle="Conteúdos sobre tecnologia, negócios e marketing."
           imageUrl="/images/dev_bg.webp"
+          simpleTitle={true}
+          title="Canal no Youtube"
           hoverContent={
             <div className={outStyles.contextBox}>
-              <ActionButton text="REALIZAR ORÇAMENTO"></ActionButton>
+              <Img url="/images/arrow.svg" width={32} height={32}></Img>
             </div>
           }
-          defaultContent={
-            <div className={outStyles.contextBox}>
-              <h1>CONTENT</h1>
-            </div>
-          }
+          defaultContent={<div className={outStyles.contextBox}></div>}
         ></Link>
         <Link
           tag="Comece a seguir"
           texts={web}
           subtitle="Conteúdos diários sobre tecnologia, negócios e marketing. Sempre com um pouco humor (às vezes nem tanto)."
           imageUrl="/images/dev_bg.webp"
+          simpleTitle={true}
+          title="Perfil no Instagram"
           hoverContent={
             <div className={outStyles.contextBox}>
-              <ActionButton text="REALIZAR ORÇAMENTO"></ActionButton>
+              <Img url="/images/arrow.svg" width={32} height={32}></Img>
             </div>
           }
-          defaultContent={
-            <div className={outStyles.contextBox}>
-              <h1>CONTENT</h1>
-            </div>
-          }
+          defaultContent={<div className={outStyles.contextBox}></div>}
         ></Link>
       </section>
     </main>

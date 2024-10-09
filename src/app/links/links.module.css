@@ -8,7 +8,23 @@
   padding-top: 24px;
   gap: 40px;
   /* styles */
+  /* background: linear-gradient(135deg, #3A005C, #000212, #19024E); */
+  background: radial-gradient(
+    45.74% 60.81% at 52.31% 1.93%,
+    #081c3f 0,
+    rgba(1, 6, 15, 0.67) 100%
+  ),
+  #030e20;
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
 }
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .box {
   /* display */
@@ -35,7 +51,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .info {
@@ -43,6 +60,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .info h3 {
@@ -51,7 +69,7 @@
 }
 
 .info p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: rgb(201, 201, 201);
 }

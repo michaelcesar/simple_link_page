@@ -11,6 +11,8 @@ interface LinkProps {
   imageUrl: string;
   hoverContent?: JSX.Element;
   defaultContent?: JSX.Element;
+  simpleTitle?: boolean;
+  title?: string;
 }
 
 export default function Link({
@@ -19,7 +21,9 @@ export default function Link({
   subtitle,
   imageUrl,
   hoverContent,
-  defaultContent
+  defaultContent,
+  simpleTitle = false,
+  title
 }: LinkProps) {
   const [, setIsHovered] = useState(false);
 
@@ -40,8 +44,10 @@ export default function Link({
       </div>
       <div className={styles.content}>
         <div className={styles.tag}>{tag}</div>
-        <Words texts={texts} />
-        <p>{subtitle}</p>
+        {simpleTitle ? <h2>{title}</h2> : <Words texts={texts} />}
+        <div className={styles.textBox}>
+          <p>{subtitle}</p>
+        </div>
       </div>
     </aside>
   );

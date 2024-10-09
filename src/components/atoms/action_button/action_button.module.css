@@ -15,18 +15,10 @@
   color: var(--white);
   font-family: var(--font-poppins), sans-serif;
   font-weight: 500;
-  animation: bounce 2s infinite;
 }
 
 .wrapper:hover {
-    transition: 1s;
-    cursor: pointer;
-    background: radial-gradient(
-      45.74% 60.81% at 52.31% 1.93%,
-      #081c3f 0,
-      rgba(1, 6, 15, 0.67) 100%
-    ),
-    #030e20;
+  cursor: pointer;
 }
 
 @keyframes bounce {
