@@ -12,7 +12,7 @@ interface LinkProps {
   hoverContent?: JSX.Element;
   defaultContent?: JSX.Element;
   simpleTitle?: boolean;
-  title?: string;
+  title?: JSX.Element;
 }
 
 export default function Link({
@@ -44,7 +44,7 @@ export default function Link({
       </div>
       <div className={styles.content}>
         <div className={styles.tag}>{tag}</div>
-        {simpleTitle ? <h2>{title}</h2> : <Words texts={texts} />}
+        {simpleTitle ? <div>{title}</div> : <Words texts={texts} />}
         <div className={styles.textBox}>
           <p>{subtitle}</p>
         </div>

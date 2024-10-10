@@ -112,7 +112,7 @@
 
 .textBox {
   display: flex;
-  height: 220px;
+  height: 300px;
 }
 
 .textBox p {
@@ -123,11 +123,7 @@
 
 .content h2 {
   font-size: 1.4rem;
-  font-weight: 700;
-  background: linear-gradient(92deg, #fdfdfd -3.01%, #e4e4e4 95.31%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 500;
 }
 
 .tag {
